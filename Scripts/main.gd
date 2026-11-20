@@ -89,7 +89,7 @@ func _on_building_timer_timeout() -> void:
 
 func generate_pipe():
 	var building = building_scene.instantiate()
-	building.position.x = screen_size.x + pipe_delay - 175
+	building.position.x = screen_size.x + pipe_delay
 	building.position.y = (screen_size.y - ground_height) / 2 + randi_range(-pipe_range, pipe_range)
 	building.hit.connect(plane_hit)
 	building.scored.connect(scored)
