@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cqhaypiuuc8pg"]
+
+[ext_resource type="Texture2D" uid="uid://dmqtiqp7neet8" path="res://Assets/american-airlines-boeing-767-copyright-750x466-removebg-preview.png" id="1_jjgbg"]
+[ext_resource type="Script" uid="uid://dr6ve35ky4kh" path="res://Scripts/plane.gd" id="1_ly0hq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r3axf"]
+size = Vector2(176, 22)
+
+[node name="Plane" type="CharacterBody2D" unique_id=1046997569]
+script = ExtResource("1_ly0hq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=117520975]
+position = Vector2(-3.0009928, 5.6555414)
+rotation = -2.9357595
+scale = Vector2(0.348, -0.348)
+texture = ExtResource("1_jjgbg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=736332671]
+position = Vector2(4, 13)
+shape = SubResource("RectangleShape2D_r3axf")
