@@ -13,6 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://cwcqj41w8ckgb" path="res://Assets/5.png" id="8_k12tt"]
 [ext_resource type="Texture2D" uid="uid://dc3sxiagaoju" path="res://Assets/6.png" id="9_h1bgf"]
 [ext_resource type="FontFile" uid="uid://dplp6iacay57l" path="res://Assets/Fonts/Handjet-VariableFont_ELGR,ELSH,wght.ttf" id="13_fdnlq"]
+[ext_resource type="VideoStream" uid="uid://i5alm1mnutxc" path="res://Assets/fake-twitch-chat-vertical_via_10015_io.ogv" id="14_jkdf5"]
+[ext_resource type="Shader" uid="uid://4wdj4eolpyxu" path="res://Scripts/main.gdshader" id="14_wsu2k"]
+[ext_resource type="Texture2D" uid="uid://3k3opkman46f" path="res://Assets/osama.png" id="16_k12tt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_21xkr"]
 texture = ExtResource("3_kry3j")
@@ -33,6 +36,12 @@ sources/0 = SubResource("TileSetAtlasSource_21xkr")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r3axf"]
 size = Vector2(2975, 142)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wsu2k"]
+shader = ExtResource("14_wsu2k")
+shader_parameter/chroma_key_color = Color(0, 0.9993908, 0, 1)
+shader_parameter/pickup_range = 0.2350000111625
+shader_parameter/fade_amount = 1.0
 
 [node name="Main" type="Node2D" unique_id=992189793]
 script = ExtResource("1_jjvhh")
@@ -125,6 +134,23 @@ text = "0
 "
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1920832513]
+z_index = 1
+material = SubResource("ShaderMaterial_wsu2k")
+offset_left = 4.0
+offset_right = 1084.0
+offset_bottom = 1920.0
+scale = Vector2(0.29988348, 0.29988348)
+stream = ExtResource("14_jkdf5")
+autoplay = true
+expand = true
+
+[node name="Osama" type="Sprite2D" parent="." unique_id=740486461]
+z_index = 1
+position = Vector2(162, 134)
+scale = Vector2(1.7602742, 1.7602742)
+texture = ExtResource("16_k12tt")
 
 [connection signal="body_entered" from="Ground" to="Ground" method="_on_body_entered"]
 [connection signal="hit" from="Ground" to="." method="_on_ground_hit"]

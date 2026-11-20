@@ -16,7 +16,7 @@ script = ExtResource("1_juwjy")
 
 [node name="Parallax2D" type="Parallax2D" parent="ParallaxBackground" unique_id=720544712]
 scale = Vector2(3.2013288, 3.2013288)
-scroll_offset = Vector2(632, 464)
+scroll_offset = Vector2(-4354, 464)
 repeat_size = Vector2(1555, 0)
 autoscroll = Vector2(-10, 0)
 
@@ -25,7 +25,7 @@ texture = ExtResource("1_5326e")
 
 [node name="Parallax2D2" type="Parallax2D" parent="ParallaxBackground" unique_id=794672302]
 scale = Vector2(3.2013288, 3.2013288)
-scroll_offset = Vector2(632, 464)
+scroll_offset = Vector2(-4354, 464)
 repeat_size = Vector2(1555, 0)
 autoscroll = Vector2(-20, 0)
 
@@ -34,7 +34,7 @@ texture = ExtResource("2_l2o7r")
 
 [node name="Parallax2D3" type="Parallax2D" parent="ParallaxBackground" unique_id=845351952]
 scale = Vector2(3.2013288, 3.2013288)
-scroll_offset = Vector2(632, 464)
+scroll_offset = Vector2(-4354, 464)
 repeat_size = Vector2(1555, 0)
 autoscroll = Vector2(-30, 0)
 
@@ -43,7 +43,7 @@ texture = ExtResource("3_juwjy")
 
 [node name="Parallax2D4" type="Parallax2D" parent="ParallaxBackground" unique_id=1264413559]
 scale = Vector2(3.2013288, 3.2013288)
-scroll_offset = Vector2(632, 464)
+scroll_offset = Vector2(-4354, 464)
 repeat_size = Vector2(1555, 0)
 autoscroll = Vector2(-40, 0)
 
@@ -52,7 +52,7 @@ texture = ExtResource("4_t8w0y")
 
 [node name="Parallax2D5" type="Parallax2D" parent="ParallaxBackground" unique_id=571952270]
 scale = Vector2(3.2013288, 3.2013288)
-scroll_offset = Vector2(632, 464)
+scroll_offset = Vector2(-4354, 464)
 repeat_size = Vector2(1555, 0)
 autoscroll = Vector2(-50, 0)
 
@@ -61,7 +61,7 @@ texture = ExtResource("5_eybw1")
 
 [node name="Parallax2D6" type="Parallax2D" parent="ParallaxBackground" unique_id=1345244897]
 scale = Vector2(3.2013288, 3.2013288)
-scroll_offset = Vector2(632, 464)
+scroll_offset = Vector2(-4354, 464)
 repeat_size = Vector2(1555, 0)
 autoscroll = Vector2(-60, 0)
 
@@ -69,6 +69,7 @@ autoscroll = Vector2(-60, 0)
 texture = ExtResource("6_hu3kb")
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=1110528704]
+position = Vector2(-7.9335938, 0)
 color = Color(0.007843138, 0.08235294, 0.10980392, 1)
 polygon = PackedVector2Array(0, 1104, 1120, 1104, 1120, 960, 0, 960)
 
@@ -77,8 +78,10 @@ polygon = PackedVector2Array(0, 1104, 1120, 1104, 1120, 960, 0, 960)
 [node name="MenuLayer" type="Control" parent="MenuLayer" unique_id=56091497]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 1122.0
+offset_left = -7.9335938
+offset_right = 1114.0664
 offset_bottom = 1102.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="MenuLayer/MenuLayer" unique_id=104530081]
 layout_mode = 1
