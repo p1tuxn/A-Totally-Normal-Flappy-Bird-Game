@@ -5,13 +5,13 @@
 [ext_resource type="Texture2D" uid="uid://6lx7oqjnhsrx" path="res://Assets/building upper.png" id="3_am7g1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p35aa"]
-size = Vector2(146.5, 65)
+size = Vector2(146.5, 60.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b0fa7"]
 size = Vector2(145.25, 1177)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c7t5u"]
-size = Vector2(145.5, 45)
+size = Vector2(145.5, 35.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r3axf"]
 size = Vector2(177, 272)
@@ -20,13 +20,13 @@ size = Vector2(177, 272)
 script = ExtResource("1_o5j4o")
 
 [node name="lower" type="Sprite2D" parent="." unique_id=1044228907]
-position = Vector2(1, 0)
-scale = Vector2(1.8483028, 2.9641507)
+position = Vector2(-2, 334)
+scale = Vector2(0.89135236, 1.429475)
 texture = ExtResource("2_h8hr8")
 offset = Vector2(0, 270)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=784227927]
-position = Vector2(2.75, 139)
+position = Vector2(2.75, 141.25)
 shape = SubResource("RectangleShape2D_p35aa")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=285243075]
@@ -34,13 +34,14 @@ position = Vector2(2, 760.5)
 shape = SubResource("RectangleShape2D_b0fa7")
 
 [node name="upper" type="Sprite2D" parent="." unique_id=1160086750]
-scale = Vector2(1.8483028, 2.9641507)
+position = Vector2(-2.861023e-06, -475)
+scale = Vector2(0.8985526, 1.4410219)
 texture = ExtResource("3_am7g1")
 offset = Vector2(0, -270)
 flip_v = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=1756421359]
-position = Vector2(6.25, -193)
+position = Vector2(6.25, -197.75)
 shape = SubResource("RectangleShape2D_c7t5u")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="." unique_id=710531484]

@@ -1,11 +1,18 @@
 [gd_scene format=4 uid="uid://bjce8am5p2tuy"]
 
-[ext_resource type="Texture2D" uid="uid://criextakobmpp" path="res://Assets/Background4.png" id="1_8gbba"]
 [ext_resource type="Script" uid="uid://buqlhkcabai6l" path="res://Scripts/main.gd" id="1_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://dlwendp1drsf" path="res://Scenes/buildings.tscn" id="2_21xkr"]
 [ext_resource type="PackedScene" uid="uid://cqhaypiuuc8pg" path="res://Scenes/plane.tscn" id="2_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://kbwc4s3qfuft" path="res://Scenes/explosion.tscn" id="3_6bp64"]
 [ext_resource type="Texture2D" uid="uid://cnvj5kofthrc0" path="res://Assets/TileStyle5.png" id="3_kry3j"]
+[ext_resource type="Texture2D" uid="uid://5b7od2vefx3r" path="res://Assets/1.png" id="4_6iyac"]
 [ext_resource type="Script" uid="uid://dc182jwo2t0sp" path="res://Scripts/area_2d.gd" id="4_kry3j"]
+[ext_resource type="Texture2D" uid="uid://bhn7iqkfrc3ew" path="res://Assets/2.png" id="5_fdnlq"]
+[ext_resource type="Texture2D" uid="uid://dskm2afitxd2g" path="res://Assets/3.png" id="6_jkdf5"]
+[ext_resource type="Texture2D" uid="uid://dysgtkkt3smun" path="res://Assets/4.png" id="7_wsu2k"]
+[ext_resource type="Texture2D" uid="uid://cwcqj41w8ckgb" path="res://Assets/5.png" id="8_k12tt"]
+[ext_resource type="Texture2D" uid="uid://dc3sxiagaoju" path="res://Assets/6.png" id="9_h1bgf"]
+[ext_resource type="FontFile" uid="uid://dplp6iacay57l" path="res://Assets/Fonts/Handjet-VariableFont_ELGR,ELSH,wght.ttf" id="13_fdnlq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_21xkr"]
 texture = ExtResource("3_kry3j")
@@ -30,11 +37,57 @@ size = Vector2(2975, 142)
 [node name="Main" type="Node2D" unique_id=992189793]
 script = ExtResource("1_jjvhh")
 building_scene = ExtResource("2_21xkr")
+BOOM = ExtResource("3_6bp64")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=449702691]
-position = Vector2(563, 506)
-scale = Vector2(4.37898, 4.37898)
-texture = ExtResource("1_8gbba")
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1565219393]
+
+[node name="Parallax2D" type="Parallax2D" parent="ParallaxBackground" unique_id=2139961390]
+scale = Vector2(3.2013288, 3.2013288)
+scroll_offset = Vector2(632, 464)
+autoscroll = Vector2(-50, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D" unique_id=954902196]
+texture = ExtResource("4_6iyac")
+
+[node name="Parallax2D2" type="Parallax2D" parent="ParallaxBackground" unique_id=1110401980]
+scale = Vector2(3.2013288, 3.2013288)
+scroll_offset = Vector2(632, 464)
+autoscroll = Vector2(-50, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D2" unique_id=397529622]
+texture = ExtResource("5_fdnlq")
+
+[node name="Parallax2D3" type="Parallax2D" parent="ParallaxBackground" unique_id=897693184]
+scale = Vector2(3.2013288, 3.2013288)
+scroll_offset = Vector2(632, 464)
+autoscroll = Vector2(-50, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D3" unique_id=2046432986]
+texture = ExtResource("6_jkdf5")
+
+[node name="Parallax2D4" type="Parallax2D" parent="ParallaxBackground" unique_id=520921285]
+scale = Vector2(3.2013288, 3.2013288)
+scroll_offset = Vector2(632, 464)
+autoscroll = Vector2(-50, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D4" unique_id=874077860]
+texture = ExtResource("7_wsu2k")
+
+[node name="Parallax2D5" type="Parallax2D" parent="ParallaxBackground" unique_id=1401390127]
+scale = Vector2(3.2013288, 3.2013288)
+scroll_offset = Vector2(632, 464)
+autoscroll = Vector2(-50, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D5" unique_id=31167041]
+texture = ExtResource("8_k12tt")
+
+[node name="Parallax2D6" type="Parallax2D" parent="ParallaxBackground" unique_id=489206862]
+scale = Vector2(3.2013288, 3.2013288)
+scroll_offset = Vector2(632, 464)
+autoscroll = Vector2(-50, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D6" unique_id=961039392]
+texture = ExtResource("9_h1bgf")
 
 [node name="Plane" parent="." unique_id=1046997569 instance=ExtResource("2_jjvhh")]
 position = Vector2(501, 569)
@@ -53,7 +106,6 @@ position = Vector2(1489.5, 1035)
 shape = SubResource("RectangleShape2D_r3axf")
 
 [node name="BuildingTimer" type="Timer" parent="." unique_id=344776003]
-wait_time = 3.0
 
 [node name="ScoreLabel" type="Label" parent="." unique_id=937948956]
 z_index = 1
@@ -65,6 +117,9 @@ offset_top = 208.0
 offset_right = 568.0
 offset_bottom = 257.0
 grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("13_fdnlq")
 theme_override_font_sizes/font_size = 100
 text = "0
 "
