@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="I died and got reincarnated as Bin-Laden kun"
-run/main_scene="uid://bjce8am5p2tuy"
+run/main_scene="uid://c3tgs8n3b3jf"
 run/enable_alt_space_menu=true
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
