@@ -110,6 +110,7 @@ func plane_hit():
 	tween.tween_property($ScoreLabel, "theme_override_font_sizes/font_size", 60, 1)
 	$ScoreLabel.text = "wallah you are a fine pilot
 	Osama Approves"
+	$Plane.falling = true
 	stop_game()
 	boom()
 
@@ -118,6 +119,7 @@ func _on_ground_hit() -> void:
 	tween.tween_property($ScoreLabel, "theme_override_font_sizes/font_size", 60, 1)
 	$ScoreLabel.text = "wallah you are a shit pilot
 	Osama does not Approve"
+	$Plane.falling = true
 	stop_game()
 	boom()
 
