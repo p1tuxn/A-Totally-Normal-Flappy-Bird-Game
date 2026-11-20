@@ -48,54 +48,61 @@ script = ExtResource("1_jjvhh")
 building_scene = ExtResource("2_21xkr")
 BOOM = ExtResource("3_6bp64")
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1565219393]
+[node name="Background" type="Node2D" parent="." unique_id=1266486728]
+position = Vector2(0, 480)
 
-[node name="Parallax2D" type="Parallax2D" parent="ParallaxBackground" unique_id=2139961390]
-scale = Vector2(3.2013288, 3.2013288)
-scroll_offset = Vector2(632, 464)
-autoscroll = Vector2(-50, 0)
+[node name="Parallax2D" type="Parallax2D" parent="Background" unique_id=611117398]
+repeat_size = Vector2(1728, 0)
+autoscroll = Vector2(-10, 0)
+repeat_times = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D" unique_id=954902196]
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D" unique_id=1477499019]
+scale = Vector2(3, 3)
 texture = ExtResource("4_6iyac")
 
-[node name="Parallax2D2" type="Parallax2D" parent="ParallaxBackground" unique_id=1110401980]
-scale = Vector2(3.2013288, 3.2013288)
-scroll_offset = Vector2(632, 464)
-autoscroll = Vector2(-50, 0)
+[node name="Parallax2D2" type="Parallax2D" parent="Background" unique_id=1890627837]
+repeat_size = Vector2(1728, 0)
+autoscroll = Vector2(-20, 0)
+repeat_times = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D2" unique_id=397529622]
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D2" unique_id=196206027]
+scale = Vector2(3, 3)
 texture = ExtResource("5_fdnlq")
 
-[node name="Parallax2D3" type="Parallax2D" parent="ParallaxBackground" unique_id=897693184]
-scale = Vector2(3.2013288, 3.2013288)
-scroll_offset = Vector2(632, 464)
-autoscroll = Vector2(-50, 0)
+[node name="Parallax2D3" type="Parallax2D" parent="Background" unique_id=543117352]
+repeat_size = Vector2(1728, 0)
+autoscroll = Vector2(-30, 0)
+repeat_times = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D3" unique_id=2046432986]
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D3" unique_id=218394402]
+scale = Vector2(3, 3)
 texture = ExtResource("6_jkdf5")
 
-[node name="Parallax2D4" type="Parallax2D" parent="ParallaxBackground" unique_id=520921285]
-scale = Vector2(3.2013288, 3.2013288)
-scroll_offset = Vector2(632, 464)
-autoscroll = Vector2(-50, 0)
+[node name="Parallax2D4" type="Parallax2D" parent="Background" unique_id=1298445125]
+repeat_size = Vector2(1728, 0)
+autoscroll = Vector2(-40, 0)
+repeat_times = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D4" unique_id=874077860]
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D4" unique_id=874868135]
+scale = Vector2(3, 3)
 texture = ExtResource("7_wsu2k")
 
-[node name="Parallax2D5" type="Parallax2D" parent="ParallaxBackground" unique_id=1401390127]
-scale = Vector2(3.2013288, 3.2013288)
-scroll_offset = Vector2(632, 464)
+[node name="Parallax2D5" type="Parallax2D" parent="Background" unique_id=868927608]
+repeat_size = Vector2(1728, 0)
 autoscroll = Vector2(-50, 0)
+repeat_times = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D5" unique_id=31167041]
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D5" unique_id=800594306]
+scale = Vector2(3, 3)
 texture = ExtResource("8_k12tt")
 
-[node name="Parallax2D6" type="Parallax2D" parent="ParallaxBackground" unique_id=489206862]
-scale = Vector2(3.2013288, 3.2013288)
-scroll_offset = Vector2(632, 464)
-autoscroll = Vector2(-50, 0)
+[node name="Parallax2D6" type="Parallax2D" parent="Background" unique_id=1670629060]
+repeat_size = Vector2(1728, 0)
+autoscroll = Vector2(-60, 0)
+repeat_times = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D6" unique_id=961039392]
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D6" unique_id=1444836708]
+scale = Vector2(3, 3)
 texture = ExtResource("9_h1bgf")
 
 [node name="Plane" parent="." unique_id=1046997569 instance=ExtResource("2_jjvhh")]
@@ -115,6 +122,8 @@ position = Vector2(1489.5, 1035)
 shape = SubResource("RectangleShape2D_r3axf")
 
 [node name="BuildingTimer" type="Timer" parent="." unique_id=344776003]
+wait_time = 1.5
+ignore_time_scale = true
 
 [node name="ScoreLabel" type="Label" parent="." unique_id=937948956]
 z_index = 1

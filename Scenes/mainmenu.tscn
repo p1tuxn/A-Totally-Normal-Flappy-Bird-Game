@@ -12,60 +12,61 @@
 [node name="Main Menu" type="Node2D" unique_id=594693367]
 script = ExtResource("1_juwjy")
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=253262209]
+[node name="Background" type="Node2D" parent="." unique_id=636164357]
+position = Vector2(0, 480)
 
-[node name="Parallax2D" type="Parallax2D" parent="ParallaxBackground" unique_id=720544712]
-scale = Vector2(3.2013288, 3.2013288)
-scroll_offset = Vector2(-4354, 464)
-repeat_size = Vector2(1555, 0)
+[node name="Parallax2D" type="Parallax2D" parent="Background" unique_id=720544712]
+repeat_size = Vector2(1728, 0)
 autoscroll = Vector2(-10, 0)
+repeat_times = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D" unique_id=1474709026]
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D" unique_id=1474709026]
+scale = Vector2(3, 3)
 texture = ExtResource("1_5326e")
 
-[node name="Parallax2D2" type="Parallax2D" parent="ParallaxBackground" unique_id=794672302]
-scale = Vector2(3.2013288, 3.2013288)
-scroll_offset = Vector2(-4354, 464)
-repeat_size = Vector2(1555, 0)
+[node name="Parallax2D2" type="Parallax2D" parent="Background" unique_id=794672302]
+repeat_size = Vector2(1728, 0)
 autoscroll = Vector2(-20, 0)
+repeat_times = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D2" unique_id=1740045454]
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D2" unique_id=1740045454]
+scale = Vector2(3, 3)
 texture = ExtResource("2_l2o7r")
 
-[node name="Parallax2D3" type="Parallax2D" parent="ParallaxBackground" unique_id=845351952]
-scale = Vector2(3.2013288, 3.2013288)
-scroll_offset = Vector2(-4354, 464)
-repeat_size = Vector2(1555, 0)
+[node name="Parallax2D3" type="Parallax2D" parent="Background" unique_id=845351952]
+repeat_size = Vector2(1728, 0)
 autoscroll = Vector2(-30, 0)
+repeat_times = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D3" unique_id=2035013449]
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D3" unique_id=2035013449]
+scale = Vector2(3, 3)
 texture = ExtResource("3_juwjy")
 
-[node name="Parallax2D4" type="Parallax2D" parent="ParallaxBackground" unique_id=1264413559]
-scale = Vector2(3.2013288, 3.2013288)
-scroll_offset = Vector2(-4354, 464)
-repeat_size = Vector2(1555, 0)
+[node name="Parallax2D4" type="Parallax2D" parent="Background" unique_id=1264413559]
+repeat_size = Vector2(1728, 0)
 autoscroll = Vector2(-40, 0)
+repeat_times = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D4" unique_id=1078072438]
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D4" unique_id=1078072438]
+scale = Vector2(3, 3)
 texture = ExtResource("4_t8w0y")
 
-[node name="Parallax2D5" type="Parallax2D" parent="ParallaxBackground" unique_id=571952270]
-scale = Vector2(3.2013288, 3.2013288)
-scroll_offset = Vector2(-4354, 464)
-repeat_size = Vector2(1555, 0)
+[node name="Parallax2D5" type="Parallax2D" parent="Background" unique_id=571952270]
+repeat_size = Vector2(1728, 0)
 autoscroll = Vector2(-50, 0)
+repeat_times = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D5" unique_id=1630710607]
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D5" unique_id=1630710607]
+scale = Vector2(3, 3)
 texture = ExtResource("5_eybw1")
 
-[node name="Parallax2D6" type="Parallax2D" parent="ParallaxBackground" unique_id=1345244897]
-scale = Vector2(3.2013288, 3.2013288)
-scroll_offset = Vector2(-4354, 464)
-repeat_size = Vector2(1555, 0)
+[node name="Parallax2D6" type="Parallax2D" parent="Background" unique_id=1345244897]
+repeat_size = Vector2(1728, 0)
 autoscroll = Vector2(-60, 0)
+repeat_times = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D6" unique_id=1763698133]
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D6" unique_id=1763698133]
+scale = Vector2(3, 3)
 texture = ExtResource("6_hu3kb")
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=1110528704]

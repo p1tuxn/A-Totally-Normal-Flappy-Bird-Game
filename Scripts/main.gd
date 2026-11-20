@@ -9,15 +9,15 @@ var scroll
 var score
 const scroll_speed: int = 4
 const parallax_speeds: Array[float] = [8.0, 14.0, 20.0, 28.0, 38.0, 50.0]
-const parallax_start_offset := Vector2(632, 464)
+const parallax_start_offset := Vector2(0,0)
 var screen_size: Vector2i
 var ground_height: int
 var pipes: Array
 const pipe_delay: int = 100
 const pipe_range: int = 200
-var inital_timer = "wait_time"
+var initial_timer = "wait_time"
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
 	new_game()
 	ground_height = $Ground.get_node("CollisionShape2D").shape.size.y
@@ -37,12 +37,8 @@ func new_game():
 
 func _reset_parallax() -> void:
 	for i in range(parallax_speeds.size()):
-		var layer: Parallax2D = $ParallaxBackground.get_child(i)
-		layer.scroll_offset = parallax_start_offset
+		var layer: Parallax2D = $Background.get_child(i)
 		layer.autoscroll = Vector2.ZERO
-		var sprite: Sprite2D = layer.get_child(0)
-		if sprite.texture:
-			layer.repeat_size = sprite.texture.get_size()
 
 func _input(event: InputEvent) -> void:
 	if game_over == false:
@@ -67,12 +63,12 @@ func stop_game():
 	game_running = false
 	game_over = true
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta: float) -> void:
 	if game_running:
 
 		for i in range(parallax_speeds.size()):
-			var layer: Parallax2D = $ParallaxBackground.get_child(i)
+			var layer: Parallax2D = $Background.get_child(i)
 			layer.scroll_offset.x -= parallax_speeds[i] * delta
 
 		scroll += scroll_speed
@@ -110,7 +106,7 @@ func plane_hit():
 	tween.tween_property($ScoreLabel, "theme_override_font_sizes/font_size", 60, 1)
 	$ScoreLabel.text = "wallah you are a fine pilot
 	Osama Approves"
-	$Plane.falling = true
+	$Plane.falling = false
 	stop_game()
 	boom()
 
