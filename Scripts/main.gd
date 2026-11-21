@@ -10,7 +10,9 @@ var score: int = 0
 var screen_size: Vector2i
 var ground_height: int
 var pipes: Array = []
-
+var new_high_score: bool = false
+var high_score: int = 0
+const SAVE_PATH = "user://highscore.cfg"
 const scroll_speed: int = 240
 const parallax_speeds: Array[float] = [10.0, 20.0, 30.0, 40.0, 50.0, 60.0]
 const pipe_delay: int = 100
@@ -20,10 +22,12 @@ const pipe_range: int = 200
 func _ready() -> void:
 	ground_height = $Ground.get_node("CollisionShape2D").shape.size.y
 	screen_size = Vector2i(get_viewport_rect().size)
+	load_high_score()
 	new_game()
 
 
 func new_game():
+	new_high_score = false
 	game_running = false
 	game_over = false
 	score = 0
@@ -42,14 +46,15 @@ func _reset_parallax() -> void:
 		layer.autoscroll = Vector2.ZERO
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
+	if event is InputEventMouseButton and not game_over:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			if game_over:
-				new_game()
-			elif not game_running:
+			if not game_running:
 				start_game()
 			elif $Plane.flying:
 				$Plane.flap()
+	elif Input.is_action_just_pressed("ui_accept") and game_over:
+		new_game()
+
 
 func start_game():
 	game_running = true
@@ -75,11 +80,8 @@ func _process(delta: float) -> void:
 	if not game_running:
 		return
 	
-	if $Plane.position.y < 0:
-		$Plane.falling = true
-		stop_game()
-		return
-		
+	check_top()
+	
 	scroll += scroll_speed * delta
 	
 	if scroll >= screen_size.x:
@@ -107,22 +109,72 @@ func generate_pipe():
 	add_child(building)
 	pipes.append(building)
 
+func load_high_score():
+	var config = ConfigFile.new()
+	var err = config.load(SAVE_PATH)
+
+	if err == OK:
+		high_score = config.get_value("scores", "high_score", 0)
+	else:
+		high_score = 0
+
 func scored():
-	score += 1 
+	score += 1
 	$ScoreLabel.text = str(score)
+	if score > high_score:
+		high_score = score
+		$HighScore.text = "Highscore: " + str(high_score)
+		save_high_score()
+	else:
+		$HighScore.text = "Highscore: " + str(high_score)
+	if score == 20:
+		$BuildingTimer.wait_time = 2.5
+	elif score == 50:
+		$BuildingTimer.wait_time = 2.0
+	elif score == 70:
+		$BuildingTimer.wait_time = 1.5
+
+func save_high_score():
+	var config = ConfigFile.new()
+	config.set_value("scores", "high_score", high_score)
+	config.save(SAVE_PATH)
+	
+func check_high_score():
+	if score > high_score:
+		high_score = score
+		new_high_score = true
+		save_high_score()
+	else:
+		new_high_score = false
 
 func plane_hit():
+	check_high_score()
+	if new_high_score:
+		$ScoreLabel.text = "Wallah you are a fine pilot\nNew High Score!\nScore: " + str(score) + "\n\nPress Enter to continue"
+	else:
+		$ScoreLabel.text = "Wallah you are a fine pilot\nScore: " + str(score) + "\nBest: " + str(high_score) + "\n\nPress Enter to continue"
+
 	var tween = create_tween()
 	tween.tween_property($ScoreLabel, "theme_override_font_sizes/font_size", 60, 1)
-	$ScoreLabel.text = "wallah you are a fine pilot\nOsama Approves"
+
 	$Plane.falling = false
 	stop_game()
 	boom()
+func check_top():
+	if $Plane.position.y < 0:
+		$Plane.falling = true
+		stop_game()
 
 func _on_ground_hit() -> void:
+	check_high_score()
+	if new_high_score:
+		$ScoreLabel.text = "Wallah you are a shit pilot\nNew High Score!\nScore: " + str(score) + "\n\nPress Enter to continue"
+	else:
+		$ScoreLabel.text = "Wallah you are a shit pilot \nScore: " + str(score) + "\nBest: " + str(high_score) + "\n\nPress Enter to continue"
+
 	var tween = create_tween()
 	tween.tween_property($ScoreLabel, "theme_override_font_sizes/font_size", 60, 1)
-	$ScoreLabel.text = "wallah you are a shit pilot\nOsama does not Approve"
+
 	$Plane.falling = true
 	stop_game()
 	boom()

@@ -4,14 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://bqur6rxd5ovdh" path="res://Assets/building lower.png" id="2_h8hr8"]
 [ext_resource type="Texture2D" uid="uid://6lx7oqjnhsrx" path="res://Assets/building upper.png" id="3_am7g1"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p35aa"]
-size = Vector2(146.5, 60.5)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b0fa7"]
-size = Vector2(145.25, 1177)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c7t5u"]
-size = Vector2(145.5, 35.5)
+size = Vector2(145.25, 1244)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r3axf"]
 size = Vector2(177, 272)
@@ -25,12 +19,8 @@ scale = Vector2(0.89135236, 1.429475)
 texture = ExtResource("2_h8hr8")
 offset = Vector2(0, 270)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=784227927]
-position = Vector2(2.75, 141.25)
-shape = SubResource("RectangleShape2D_p35aa")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=285243075]
-position = Vector2(2, 760.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=285243075]
+position = Vector2(2, 727)
 shape = SubResource("RectangleShape2D_b0fa7")
 
 [node name="upper" type="Sprite2D" parent="." unique_id=1160086750]
@@ -40,11 +30,7 @@ texture = ExtResource("3_am7g1")
 offset = Vector2(0, -270)
 flip_v = true
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=1756421359]
-position = Vector2(6.25, -197.75)
-shape = SubResource("RectangleShape2D_c7t5u")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="." unique_id=710531484]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=710531484]
 position = Vector2(5.375, -804)
 shape = SubResource("RectangleShape2D_b0fa7")
 
