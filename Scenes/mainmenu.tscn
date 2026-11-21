@@ -117,5 +117,23 @@ text = "Quit
 "
 text_direction = 1
 
+[node name="Label" type="Label" parent="." unique_id=1168684308]
+offset_left = 360.0
+offset_top = 176.0
+offset_right = 766.0
+offset_bottom = 403.0
+size_flags_horizontal = 8
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -14
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("7_l2o7r")
+theme_override_font_sizes/font_size = 75
+text = "I died and got 
+reincarnated as 
+Bin-Laden Chan"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="MenuLayer/MenuLayer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MenuLayer/MenuLayer/Button2" to="." method="_on_button_2_pressed"]
