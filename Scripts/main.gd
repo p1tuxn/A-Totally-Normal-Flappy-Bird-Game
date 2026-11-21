@@ -12,8 +12,9 @@ var ground_height: int
 var pipes: Array = []
 var new_high_score: bool = false
 var high_score: int = 0
+var scroll_speed: float = 240.0
+
 const SAVE_PATH = "user://highscore.cfg"
-const scroll_speed: int = 240
 const parallax_speeds: Array[float] = [10.0, 20.0, 30.0, 40.0, 50.0, 60.0]
 const pipe_delay: int = 100
 const pipe_range: int = 200
@@ -31,6 +32,8 @@ func new_game():
 	game_running = false
 	game_over = false
 	score = 0
+	scroll_speed = 240.0
+	$BuildingTimer.wait_time = 3.0
 	$ScoreLabel.text = str(score)
 	for building in pipes:
 		building.queue_free()
@@ -127,13 +130,10 @@ func scored():
 		save_high_score()
 	else:
 		$HighScore.text = "Highscore: " + str(high_score)
-	if score == 20:
-		$BuildingTimer.wait_time = 2.5
-	elif score == 50:
-		$BuildingTimer.wait_time = 2.0
-	elif score == 70:
-		$BuildingTimer.wait_time = 1.5
-
+	
+	$BuildingTimer.wait_time = max(0.5, 3.0 / (1.0 + score * 0.06))
+	scroll_speed = min(800.0, 240.0 * (1.0 + score * 0.04))
+	
 func save_high_score():
 	var config = ConfigFile.new()
 	config.set_value("scores", "high_score", high_score)

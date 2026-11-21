@@ -13,8 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://cwcqj41w8ckgb" path="res://Assets/5.png" id="8_k12tt"]
 [ext_resource type="Texture2D" uid="uid://dc3sxiagaoju" path="res://Assets/6.png" id="9_h1bgf"]
 [ext_resource type="FontFile" uid="uid://dplp6iacay57l" path="res://Assets/Fonts/Handjet-VariableFont_ELGR,ELSH,wght.ttf" id="13_fdnlq"]
-[ext_resource type="VideoStream" uid="uid://i5alm1mnutxc" path="res://Assets/fake-twitch-chat-vertical_via_10015_io.ogv" id="14_jkdf5"]
 [ext_resource type="Shader" uid="uid://4wdj4eolpyxu" path="res://Scripts/main.gdshader" id="14_wsu2k"]
+[ext_resource type="VideoStream" uid="uid://o3a4sklnt13i" path="res://Assets/fake-twitch-chat-vertical_via_10015_io_1.ogv" id="15_k12tt"]
 [ext_resource type="Texture2D" uid="uid://3k3opkman46f" path="res://Assets/osama.png" id="16_k12tt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_21xkr"]
@@ -150,7 +150,7 @@ offset_left = 891.0
 offset_top = -1.0
 offset_right = 1032.0
 offset_bottom = 45.0
-theme_override_constants/outline_size = 5
+theme_override_constants/outline_size = 7
 theme_override_fonts/font = ExtResource("13_fdnlq")
 theme_override_font_sizes/font_size = 50
 
@@ -158,16 +158,18 @@ theme_override_font_sizes/font_size = 50
 z_index = 1
 material = SubResource("ShaderMaterial_wsu2k")
 offset_left = 4.0
-offset_right = 1084.0
-offset_bottom = 1920.0
-scale = Vector2(0.29988348, 0.29988348)
-stream = ExtResource("14_jkdf5")
+offset_top = 240.0
+offset_right = 784.0
+offset_bottom = 1154.0
+scale = Vector2(0.4, 0.4)
+stream = ExtResource("15_k12tt")
 autoplay = true
 expand = true
+loop = true
 
 [node name="Osama" type="Sprite2D" parent="." unique_id=740486461]
 z_index = 1
-position = Vector2(162, 134)
+position = Vector2(145, 118)
 scale = Vector2(1.7602742, 1.7602742)
 texture = ExtResource("16_k12tt")
 
